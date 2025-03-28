@@ -59,7 +59,7 @@ def verificar_data(dia, mes, ano):
             dias_diferenca = int(abs(data - agora).days)
             meses_diferenca = abs(((data.year - agora.year) * 12) + data.month - agora.month)
             anos_diferenca = abs(data.year - agora.year)
-            if meses_diferenca % 12 == 0 and data.day - agora.day > 0:
+            if (data.month >= agora.month) and data.day > agora.day:
                 anos_diferenca = anos_diferenca - 1
 
             return jsonify({'anos_diferenca': anos_diferenca,
